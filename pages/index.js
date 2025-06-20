@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
 
 export async function getServerSideProps() {
-  const { data: listings, error } = await supabase
+  const { data: listings } = await supabase
     .from('listings')
     .select('*')
     .order('created_at', { ascending: false });
